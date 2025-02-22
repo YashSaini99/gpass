@@ -1,5 +1,6 @@
-// Package gp is a facade that re-exports functionality from the graphical password authentication system.
-// It provides a single import point for users.
+// Package gp provides graphical password authentication functionality.
+// This package no longer acts as a facade.
+//But it imports all the functions and you can use it directly using this package
 package gpass
 
 import (

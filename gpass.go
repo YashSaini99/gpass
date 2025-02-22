@@ -1,6 +1,4 @@
-// Package gpass provides graphical password authentication functionality.
-// This package no longer acts as a facade.
-//But it imports all the functions and you can use it directly using this package
+//A Golang package for graphical password authentication with secure user authentication features.
 package gpass
 
 import (

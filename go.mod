@@ -1,6 +1,6 @@
 module github.com/YashSaini99/graphical-password-authentication
 
-go 1.23
+go 1.22
 
 require (
 	github.com/joho/godotenv v1.4.0

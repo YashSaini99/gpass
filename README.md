@@ -1,6 +1,3 @@
-Below is a detailed README file that you can include with your package. This README explains what the package does, how to install it, configure it, and integrate it into a project.
-
----
 
 ```markdown
 # Graphical Password Authentication

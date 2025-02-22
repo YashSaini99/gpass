@@ -31,7 +31,7 @@ Graphical Password Authentication is a Go package that secures user login with i
 To install the package, use:
 
 ```bash
-go get github.com/YashSaini99/graphical-password-authentication/gp
+go get github.com/YashSaini99/graphical-password-authentication
 ```
 
 ## Configuration

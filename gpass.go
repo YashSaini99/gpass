@@ -1,4 +1,4 @@
-// Package gp provides graphical password authentication functionality.
+// Package gpass provides graphical password authentication functionality.
 // This package no longer acts as a facade.
 //But it imports all the functions and you can use it directly using this package
 package gpass

@@ -1,5 +1,5 @@
 
-```markdown
+
 # Graphical Password Authentication
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/YashSaini99/graphical-password-authentication)](https://goreportcard.com/report/github.com/YashSaini99/graphical-password-authentication)

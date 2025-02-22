@@ -182,10 +182,7 @@ if err != nil {
 
 - **`(m *SecureAuthManager) ValidateResetToken(username, token string) bool`**  
   Validates a password reset token.
-
-## Example
-
-See the `cmd/example/main.go` file for a complete example demonstrating registration, authentication, and password reset flows using the package.
+  
 
 ## Testing
 

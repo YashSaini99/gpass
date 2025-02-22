@@ -22,7 +22,6 @@ Graphical Password Authentication is a Go package that secures user login with i
 - [API Reference](#api-reference)
   - [Core Functions](#core-functions)
   - [Advanced Security Functions](#advanced-security-functions)
-- [Example](#example)
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)

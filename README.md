@@ -53,12 +53,6 @@ Make sure you have Go installed. Then, install the package using `go get`:
 go get github.com/YashSaini99/graphical-password-authentication
 ```
 
-Alternatively, if you are testing locally, use a replace directive in your project's `go.mod`:
-
-```go
-replace github.com/YashSaini99/graphical-password-authentication => /home/yash/Documents/graphical_password_authentication
-```
-
 ## Configuration
 
 Create a `.env` file in the root of your project with the following keys:

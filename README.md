@@ -1,53 +1,35 @@
+# Graphical Password Authentication ![Go](https://img.shields.io/badge/Go-100%25-blue) ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green) ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+Graphical Password Authentication is a Go package that secures user login with image-based password patterns. It converts selected image indices into a string, hashes it with bcrypt, and stores it in MongoDB. It also features brute-force protection, email alerts, and secure password resets.
 
-# Graphical Password Authentication
+## Features
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/YashSaini99/graphical-password-authentication)](https://goreportcard.com/report/github.com/YashSaini99/graphical-password-authentication)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-Graphical Password Authentication is a Go package that provides a secure and advanced authentication system using graphical passwords. Instead of relying on traditional text-based passwords, users provide a sequence of image selections (represented by indices), which are then converted into a string, hashed using bcrypt, and stored securely in MongoDB.
-
-This package includes:
-- **User Registration:** Register a new user with a username, email, and graphical password.
-- **User Authentication:** Authenticate a user by verifying the hashed graphical password.
-- **Advanced Security Features:** Brute-force protection (with account blocking and alert emails) and password reset functionality with secure token generation.
-- **Email Validation:** Ensure that provided email addresses are in the correct format.
-- **Facade Pattern:** A single import (via the `gp` package) re-exports all functionality for ease of use.
+- 🔒 Secure user login with image-based password patterns
+- 🛡️ Brute-force protection
+- 📧 Email alerts for suspicious activities
+- 🔄 Secure password resets
+- 💾 Stores hashed passwords in MongoDB
 
 ## Table of Contents
 
-- [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
   - [Basic Authentication](#basic-authentication)
   - [Advanced Security Features](#advanced-security-features)
+  - [Email Validation](#email-validation)
+  - [Sending Emails](#sending-emails)
 - [API Reference](#api-reference)
+  - [Core Functions](#core-functions)
+  - [Advanced Security Functions](#advanced-security-functions)
 - [Example](#example)
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
-
-- **Graphical Password Registration & Authentication:**  
-  Users register by selecting a pattern (a sequence of image indices) which is converted to a string and hashed.
-  
-- **Brute-Force Protection:**  
-  Protects against repeated failed login attempts by blocking accounts after a threshold is reached and sending alert emails.
-
-- **Password Reset:**  
-  Generate secure reset tokens and send password reset emails to allow users to change their graphical password if forgotten.
-
-- **Email Validation:**  
-  Validate the format of user-provided email addresses.
-
-- **Modular & Facade Design:**  
-  The core authentication logic is decoupled from the UI. A facade package (`gp`) is provided so that developers can import everything with a single import.
-
 ## Installation
 
-Make sure you have Go installed. Then, install the package using `go get`:
+To install the package, use:
 
 ```bash
 go get github.com/YashSaini99/graphical-password-authentication
@@ -83,34 +65,36 @@ import (
     "time"
 )
 
-// Load environment variables
-gp.LoadEnv()
+func main() {
+    // Load environment variables
+    gp.LoadEnv()
 
-// Connect to the database
-err := gp.Connect("your_mongodb_connection_string")
-if err != nil {
-    // Handle error
-}
-defer gp.Disconnect()
+    // Connect to the database
+    err := gp.Connect("your_mongodb_connection_string")
+    if err != nil {
+        // Handle error
+    }
+    defer gp.Disconnect()
 
-// Validate an email
-if !gp.IsValidEmail("user@example.com") {
-    // Handle invalid email
-}
+    // Validate an email
+    if !gp.IsValidEmail("user@example.com") {
+        // Handle invalid email
+    }
 
-// Register a new user
-err = gp.RegisterUser("username", "user@example.com", []int{1, 3, 5, 7})
-if err != nil {
-    // Handle error (e.g., duplicate username/email)
-}
+    // Register a new user
+    err = gp.RegisterUser("username", "user@example.com", []int{1, 3, 5, 7})
+    if err != nil {
+        // Handle error (e.g., duplicate username/email)
+    }
 
-// Authenticate the user
-ok, err := gp.AuthenticateUser("username", []int{1, 3, 5, 7})
-if err != nil {
-    // Handle error
-}
-if ok {
-    // Successful login
+    // Authenticate the user
+    ok, err := gp.AuthenticateUser("username", []int{1, 3, 5, 7})
+    if err != nil {
+        // Handle error
+    }
+    if ok {
+        // Successful login
+    }
 }
 ```
 
@@ -139,9 +123,30 @@ if err != nil {
 // Use the token for resetting the password, typically via a dedicated reset endpoint.
 ```
 
+### Email Validation
+
+```go
+// Validate an email
+if gp.IsValidEmail("user@example.com") {
+    fmt.Println("Email is valid")
+} else {
+    fmt.Println("Email is invalid")
+}
+```
+
+### Sending Emails
+
+```go
+// Send an email
+err := gp.SendEmail("user@example.com", "Subject", "Email body")
+if err != nil {
+    // Handle email sending error
+}
+```
+
 ## API Reference
 
-### Core Functions (from `gp` facade)
+### Core Functions
 
 - **`LoadEnv() error`**  
   Loads environment variables from a `.env` file.
@@ -198,5 +203,8 @@ Contributions are welcome! If you have ideas for enhancements, bug fixes, or add
 
 ## License
 
-This project is licensed under the MIT License.
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+[![GitHub Stars](https://img.shields.io/github/stars/YashSaini99/graphical-password-authentication?style=social)](https://github.com/YashSaini99/graphical-password-authentication)
+[![GitHub Issues](https://img.shields.io/github/issues/YashSaini99/graphical-password-authentication?style=plastic)](https://github.com/YashSaini99/graphical-password-authentication/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/YashSaini99/graphical-password-authentication?style=social)](https://github.com/YashSaini99/graphical-password-authentication)

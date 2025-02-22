@@ -143,7 +143,7 @@ if err != nil {
 
 ## API Reference
 
-### Core Functions
+### Core Functions:
 
 - **`LoadEnv() error`**  
   Loads environment variables from a `.env` file.

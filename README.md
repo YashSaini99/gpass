@@ -199,7 +199,7 @@ Contributions are welcome! If you have ideas for enhancements, bug fixes, or add
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/YashSaini99/graphical-password-authentication/blob/main/LICENCE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/YashSaini99/graphical-password-authentication/blob/main/LICENSE) file for details.
 
 [![GitHub Stars](https://img.shields.io/github/stars/YashSaini99/graphical-password-authentication?style=social)](https://github.com/YashSaini99/graphical-password-authentication)
 [![GitHub Issues](https://img.shields.io/github/issues/YashSaini99/graphical-password-authentication?style=plastic)](https://github.com/YashSaini99/graphical-password-authentication/issues)

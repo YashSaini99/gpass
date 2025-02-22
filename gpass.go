@@ -1,12 +1,12 @@
 // Package gp is a facade that re-exports functionality from the graphical password authentication system.
 // It provides a single import point for users.
-package gp
+package gpass
 
 import (
-	"github.com/YashSaini99/graphical-password-authentication/auth"
-	"github.com/YashSaini99/graphical-password-authentication/config"
-	"github.com/YashSaini99/graphical-password-authentication/db"
-	"github.com/YashSaini99/graphical-password-authentication/email"
+	"github.com/YashSaini99/gpass/auth"
+	"github.com/YashSaini99/gpass/config"
+	"github.com/YashSaini99/gpass/db"
+	"github.com/YashSaini99/gpass/email"
 )
 
 // Re-export auth functions and types.

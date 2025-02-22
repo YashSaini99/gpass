@@ -4,7 +4,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/YashSaini99/graphical-password-authentication/auth"
+	"github.com/YashSaini99/gpass/auth"
 )
 
 func TestGraphicalPasswordHashing(t *testing.T) {

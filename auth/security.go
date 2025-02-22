@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/YashSaini99/graphical-password-authentication/email"
+	"github.com/YashSaini99/gpass/email"
 )
 
 // Predefined error for blocked accounts.

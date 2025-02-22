@@ -1,4 +1,4 @@
-module github.com/YashSaini99/graphical-password-authentication
+module github.com/YashSaini99/gpass
 
 go 1.21
 

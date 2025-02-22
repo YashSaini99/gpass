@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/YashSaini99/graphical-password-authentication/db"
+	"github.com/YashSaini99/gpass/db"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

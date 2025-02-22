@@ -31,7 +31,7 @@ Graphical Password Authentication is a Go package that secures user login with i
 To install the package, use:
 
 ```bash
-go get github.com/YashSaini99/graphical-password-authentication
+go get github.com/YashSaini99/gpass
 ```
 
 ## Configuration
@@ -56,38 +56,36 @@ SMTP_PORT=2525
 
 ### Basic Authentication
 
-The package uses a facade package `gp` to simplify imports. In your code, you can do:
-
 ```go
 import (
-    "github.com/YashSaini99/graphical-password-authentication/gp"
+    "github.com/YashSaini99/gpass"
     "time"
 )
 
 func main() {
     // Load environment variables
-    gp.LoadEnv()
+    gpass.LoadEnv()
 
     // Connect to the database
-    err := gp.Connect("your_mongodb_connection_string")
+    err := gpass.Connect("your_mongodb_connection_string")
     if err != nil {
         // Handle error
     }
-    defer gp.Disconnect()
+    defer gpass.Disconnect()
 
     // Validate an email
-    if !gp.IsValidEmail("user@example.com") {
+    if !gpass.IsValidEmail("user@example.com") {
         // Handle invalid email
     }
 
     // Register a new user
-    err = gp.RegisterUser("username", "user@example.com", []int{1, 3, 5, 7})
+    err = gpass.RegisterUser("username", "user@example.com", []int{1, 3, 5, 7})
     if err != nil {
         // Handle error (e.g., duplicate username/email)
     }
 
     // Authenticate the user
-    ok, err := gp.AuthenticateUser("username", []int{1, 3, 5, 7})
+    ok, err := gpass.AuthenticateUser("username", []int{1, 3, 5, 7})
     if err != nil {
         // Handle error
     }
@@ -103,7 +101,7 @@ For added security, use the advanced functions that protect against brute-force 
 
 ```go
 // Create a SecureAuthManager instance
-secManager := gp.NewSecureAuthManager(3, 10*time.Minute, 15*time.Minute)
+secManager := gpass.NewSecureAuthManager(3, 10*time.Minute, 15*time.Minute)
 
 // Authenticate with protection (this will block the account on repeated failed attempts and send alert emails)
 ok, err := secManager.AuthenticateWithProtection("username", []int{1, 3, 5, 7}, "user@example.com")
@@ -126,7 +124,7 @@ if err != nil {
 
 ```go
 // Validate an email
-if gp.IsValidEmail("user@example.com") {
+if gpass.IsValidEmail("user@example.com") {
     fmt.Println("Email is valid")
 } else {
     fmt.Println("Email is invalid")
@@ -137,7 +135,7 @@ if gp.IsValidEmail("user@example.com") {
 
 ```go
 // Send an email
-err := gp.SendEmail("user@example.com", "Subject", "Email body")
+err := gpass.SendEmail("user@example.com", "Subject", "Email body")
 if err != nil {
     // Handle email sending error
 }
@@ -199,8 +197,8 @@ Contributions are welcome! If you have ideas for enhancements, bug fixes, or add
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/YashSaini99/graphical-password-authentication/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/YashSaini99/gpass/blob/main/LICENSE) file for details.
 
-[![GitHub Stars](https://img.shields.io/github/stars/YashSaini99/graphical-password-authentication?style=social)](https://github.com/YashSaini99/graphical-password-authentication)
-[![GitHub Issues](https://img.shields.io/github/issues/YashSaini99/graphical-password-authentication?style=plastic)](https://github.com/YashSaini99/graphical-password-authentication/issues)
-[![GitHub Forks](https://img.shields.io/github/forks/YashSaini99/graphical-password-authentication?style=social)](https://github.com/YashSaini99/graphical-password-authentication)
+[![GitHub Stars](https://img.shields.io/github/stars/YashSaini99/gpass?style=social)](https://github.com/YashSaini99/gpass)
+[![GitHub Issues](https://img.shields.io/github/issues/YashSaini99/gpass?style=plastic)](https://github.com/YashSaini99/gpass/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/YashSaini99/gpass?style=social)](https://github.com/YashSaini99/gpass)
